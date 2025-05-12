@@ -1,0 +1,15 @@
+{
+  "files": [],
+  "references": [
+    { "path": "./tsconfig.app.json" },
+    { "path": "./tsconfig.node.json" }
+  ]
+}
+
+// {
+//   "compilerOptions": {
+//     // ...
+//   },
+//   "include": ["src/**/*", "tests/**/*"], // Включаем все файлы в src и tests
+//   "exclude": ["node_modules"]
+// }
