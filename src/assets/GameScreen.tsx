@@ -205,7 +205,7 @@ const GameScreen: React.FC<GameScreenProps> = ({
 
     if (cardToFlip) { // Если карточка была выбрана
       await handleCardClick(cardToFlip, currentPlayer, true); // Ожидаем завершения переворота первой карты
-      await delay(500); // Пауза между переворотами карт
+      await delay(1000); // Пауза между переворотами карт
 
     }
       setIsComputerThinking(false); // Снимаем блокировку

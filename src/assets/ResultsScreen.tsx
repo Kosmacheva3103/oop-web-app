@@ -9,9 +9,11 @@ const ResultsScreen: React.FC = () => {
     const player1Score = localStorage.getItem('player1Score') || '0';
     const player2Score = localStorage.getItem('player2Score') || '0';
     const time = localStorage.getItem('Time') || '0';
-    const player1Name = localStorage.getItem('Player1') || 'Player';
-    const player2Name = localStorage.getItem('Player2') || 'Computer';
     const gameMode = localStorage.getItem('playerCount') || '1'; // Получаем режим игры из localStorage
+    const player1Name = gameMode==='computer'? 'Player':localStorage.getItem('Player1') || 'Player1';
+    const player2Name = gameMode==='computer'? 'Computer':localStorage.getItem('Player2') || 'Player2';
+
+
     let winner: string; // Объявляем winner здесь
 
         const playerResults = [
