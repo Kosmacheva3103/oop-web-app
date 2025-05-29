@@ -1,54 +1,64 @@
-# React + TypeScript + Vite
+# Игра "Поиск Пары" - Веб-приложение
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Этот репозиторий содержит исходный код веб-приложения "Поиск Пары", разработанного с использованием React, TypeScript и Material-UI. Приложение позволяет пользователям играть в классическую игру на запоминание (также известную как "Концентрация"), где им нужно находить пары одинаковых карточек.
 
-Currently, two official plugins are available:
+## Обзор
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Приложение представляет собой одностраничное приложение (SPA), построенное на React. Оно предоставляет удобный интерфейс для игры, управления настройками и просмотра результатов. Код написан на TypeScript для обеспечения типовой безопасности и удобства сопровождения. Material-UI используется для создания консистентного и визуально привлекательного пользовательского интерфейса.
 
-## Expanding the ESLint configuration
+## Функциональность
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+*   **Классическая игра "Поиск Пары":** Играйте в традиционную игру на запоминание с сеткой карточек.
+*   **Настраиваемая сложность:** Настройте игру, выбрав размер поля (количество пар карточек) в настройках.
+*   **Режимы для одного и двух игроков:** Играйте против себя или соревнуйтесь с другом в режиме для двух игроков.
+*   **Игра против компьютера:** Проверьте свои навыки, играя против компьютера.
+*   **Таймер:** Отслеживает время, затраченное во время игры.
+*   **Подсчет очков:** Ведет учет очков для каждого игрока (в режиме для двух игроков).
+*   **Локальное хранилище:** Сохраняет настройки игры и результаты игроков локально в браузере.
+*   **Адаптивный дизайн:** Приложение разработано для работы на различных устройствах и экранах.
+*   **Легкий уровень сложности (игра против компьютера):** Компьютер открывает одну карточку, а затем ждет некоторое время (1-5 секунд) перед тем, как открыть следующую карточку, давая игроку время запомнить карточку. Время, которое компьютер тратит на запоминание, зависит от того, как долго идет игра. Чем дольше игра идет, тем больше времени компьютер тратит на запоминание.
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## Используемые технологии
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+*   **React:** JavaScript-библиотека для создания пользовательских интерфейсов.
+*   **TypeScript:** Надмножество JavaScript, добавляющее статическую типизацию.
+*   **Material-UI:** UI-фреймворк для React, предоставляющий набор готовых компонентов.
+*   **React Router:** Библиотека для управления навигацией в React-приложениях.
+*   **Local Storage:** API браузера для локального хранения данных.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Ключевые компоненты
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+*   **`App.tsx`**: Корневой компонент, определяющий маршрутизацию приложения и общую структуру.
+*   **`GameScreen.tsx`**: Главный компонент, который отображает игровое поле, обрабатывает взаимодействие с пользователем (клики по карточкам), управляет состоянием игры и реализует логику игры.
+*   **`SettingsScreen.tsx`**: Позволяет пользователям настраивать параметры игры, такие как размер поля и количество игроков.
+*   **`Card.tsx`**: Переиспользуемый компонент, отвечающий за отрисовку одной карточки с её изображением и обработку событий клика.
+
+## Инструкции по установке
+
+1.  **Клонируйте репозиторий:**
+
+    ```bash
+    git clone https://github.com/Kosmacheva3103/oop-web-app.git
+    ```
+
+2.  **Перейдите в каталог проекта:**
+
+    ```bash
+    cd oop-web-app
+    ```
+
+3.  **Установите зависимости:**
+
+    ```bash
+    npm install  # или yarn install
+    ```
+
+4.  **Запустите сервер разработки:**
+
+    ```bash
+    npm start  # или yarn start
+    ```
+
+5.  **Откройте приложение в браузере:**
+
+    Откройте [http://localhost:3000](http://localhost:3000) в вашем браузере, чтобы просмотреть приложение.
